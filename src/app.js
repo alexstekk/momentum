@@ -30,7 +30,7 @@ addEventListener("DOMContentLoaded", initApp);
 function initApp() {
   setDate();
   setBackground();
-//   getCoords().then(({ longitude, latitude }) => fetchWeather(latitude, longitude));
+  getCoords().then(({ longitude, latitude }) => fetchWeather(latitude, longitude));
   setInterval(renderTime, 1000);
 }
 
@@ -48,13 +48,11 @@ function getLocalCoords() {
 async function getCoords() {
   try {
     if (!getLocalCoords()) {
-      console.log("do findLocation");
       const geoInfo = await findLocation();
       ({ longitude, latitude } = geoInfo.coords);
       saveLocalCoords({ longitude, latitude });
       return { longitude, latitude };
     } else {
-      console.log("local");
       ({ longitude, latitude } = getLocalCoords());
       return { longitude, latitude };
     }
