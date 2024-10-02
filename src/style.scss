@@ -1,0 +1,224 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+:root {
+  --text-white: #fff;
+  --white: #fff;
+  --fw-regular: 500;
+  --fw-bold: 700;
+  --fz-xs: 0.75rem;
+  --fz-sm: 1.25rem;
+  --fz-md: 2rem;
+  --fz-lg: 4rem;
+  --br-sm: 0.5rem;
+  --br-lg: 2rem;
+  --br-50p: 50%;
+}
+
+.app {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  color: var(--text-white);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.app {
+  // .app__header
+
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  // .app__body
+
+  &__body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 2rem 6rem;
+    border-radius: var(--br-lg);
+  }
+
+  // .app__footer
+
+  &__footer {
+    text-align: center;
+    padding-top: 1rem;
+  }
+}
+.container {
+}
+.header-app {
+}
+.weather {
+  // .weather__icon
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    margin-bottom: 0.3rem;
+  }
+
+  &__icon {
+    border-radius: var(--br-50p);
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  // .weather__city
+  &__city {
+    font-size: var(--fz-sm);
+    text-align: center;
+  }
+
+  // .weather__temperature
+
+  &__temperature {
+    font-size: var(--fz-md);
+    &::after {
+      content: "°C";
+    }
+  }
+}
+.body-app {
+  // .body-app__clock
+
+  &__clock {
+    font-size: var(--fz-lg);
+    font-weight: var(--fw-bold);
+  }
+
+  // .body-app__date
+
+  &__date {
+    margin-bottom: 2rem;
+  }
+}
+.todos {
+  // .todos__title
+
+  &__title {
+    font-size: var(--fz-md);
+    margin-bottom: 1rem;
+  }
+
+  // .todos__form
+
+  &__form {
+  }
+
+  // .todos__input-container
+
+  &__input-container {
+    margin-bottom: 2rem;
+  }
+
+  // .todos__input
+
+  &__input {
+    width: 100%;
+    padding: 0.3rem;
+    font-size: var(--fz-sm);
+    outline: none;
+    border: none;
+    border-bottom: 2px solid var(--white);
+    background-color: transparent;
+    color: var(--text-white);
+    &::placeholder {
+      color: var(--white);
+      opacity: 0.5;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 0.4rem;
+    font-size: var(--fz-sm);
+    margin-bottom: 2rem;
+    overflow-y: auto;
+    max-height: 300px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    padding: 0.25rem;
+    color: var(--white);
+    background-color: transparent;
+    outline: none;
+    border: 1px solid var(--white);
+    border-radius: var(--br-sm);
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.item-todo {
+  display: flex;
+  gap: 0.5rem;
+
+  &__completed {
+    &:checked + .item-todo__text {
+      text-decoration: line-through;
+    }
+  }
+  &__text {
+  }
+  &__delete {
+    display: inline-block;
+    margin-left: auto;
+    text-align: right;
+    cursor: pointer;
+    opacity: 0.75;
+    transition: opacity 0.3s ease-in-out;
+    padding-right: 1rem;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.footer-app {
+  font-size: var(--fz-xs);
+  a {
+    color: inherit;
+  }
+}
