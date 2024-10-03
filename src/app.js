@@ -198,6 +198,9 @@ function handleTodoChange() {
 
 function handleRemoveTodo() {
   const todoId = Number(this.parentElement.dataset.id);
+  const todo = this.parentElement;
+  todo.querySelector(".item-todo__completed").removeEventListener("change", handleTodoChange);
+  todo.querySelector(".item-todo__delete").removeEventListener("click", handleRemoveTodo);
   todos = todos.filter((todo) => todo.id !== todoId);
   renderAllTodos();
 }
@@ -218,6 +221,7 @@ function renderClearBtn() {
     document.querySelector(".todos__footer").prepend(btn);
   }
   if (!todos.length) {
+    clearBtn.removeEventListener("click", clearCompletedTodos);
     clearBtn?.remove();
   }
 }
