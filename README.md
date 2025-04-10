@@ -9,7 +9,7 @@ Web app similar to Chrome [extension](https://chromewebstore.google.com/detail/m
 - Todos
 
 ##Live
-[https://alexstekk.github.io/chat/](https://alexstekk.github.io/momentum/)
+https://alexstekk.github.io/momentum/
 
 ## Stack
 <p>
